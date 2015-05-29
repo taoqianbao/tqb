@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--<!DOCTYPE html>-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+
+        function Hello(name){
+            console.log(name);
+        }
+
+        Hello('Peter');
+
+        var s = new Hello('Peter Zhu');
+
+        console.log(Hello.prototype);
+
+        console.log(s.prototype);
+
+        function Person(){
+            this.age = 19;
+            this.name = 'peter';
+            console.log("dddddddd");
+        }
+
+        console.log(Person);
+
+        var a = new Person();
+
+        Person.prototype.getName= function(){ return this.name; };
+
+        console.log(JSON.stringify(a));
+
+        function isArray(x){
+            return (typeof x=="object" && (x.constructor==Array));
+        }
+
+        var a1 = [1,2,3];
+
+        console.log(a1,isArray(a1));
+
+
+
+    </script>
+
+</head>
+<body>
+<div id="txtMessage"></div>
+</body>
+</html>
