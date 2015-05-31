@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .row {
+            width: 100%;
+            height: 20px;
+            background-color: black;
+            clear: both;
+            content: '.';
+            color: #ffffff;
+        }
+
+        .wrap {
+            width: 90%;
+            margin: 0 auto;
+            border: solid 1px red;
+        }
+
+        .main, .sidebar {
+            height: 300px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .main {
+            width: 100%;
+            float: left;
+        }
+
+        .main .content {
+            margin-left: 200px;
+            background-color: red;
+        }
+
+        .sidebar {
+            width: 200px;
+            float: left;
+            margin-left: -100%;
+            background: green;
+        }
+
+        .c1_left {
+            height: 300px;
+        }
+
+        .c1_left {
+            float: left;
+            width: 200px;
+            background-color: red;
+        }
+
+        .c1_content {
+            background-color: green;
+            margin-left: 200px;
+        }
+    </style>
+    <style type="text/css">
+        #container1 {
+            background-color: #ffe3a6;
+        }
+
+        #container1 .wrapper1 {
+            display: inline-block;
+            border-left: 200px solid #d4c376;
+            position: relative;
+            vertical-align: bottom;
+        }
+
+        #container1 .sidebar1 {
+            float: left;
+            width: 200px;
+            margin-left: -200px;
+            position: relative;
+        }
+
+        #container1 .main1 {
+            float: left;
+        }
+
+        #container1 .main1, #container1 .sidebar1 {
+            min-height: 200px;
+            height: auto !important;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div id="container1">
+        <div class="wrapper1">
+            <div class="sidebar1">Left Sidebar</div>
+            <div class="main1">Main Content</div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    other row
+</div>
+
+<div class="wrap">
+    <div class="main">
+        <div class="content">
+            div+css自适应两列布局，一列定宽，一列自适应
+            1.如题，左侧一列定宽200px，右侧主体区块宽度自适应
+            2.处于页面优化考虑，应先加载右侧主体区块再加载左侧定宽列，所以右侧主体区块div要写在左侧定宽区块div前面
+        </div>
+    </div>
+    <div class="sidebar">
+        width=200px
+    </div>
+</div>
+<div class="row">
+    other row
+</div>
+<div class="wrap">
+    <div class="c1_left">
+        left sidebar
+    </div>
+    <div class="c1_content">
+        Main content
+    </div>
+</div>
+
+</body>
+</html>
