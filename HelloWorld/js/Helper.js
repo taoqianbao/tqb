@@ -61,9 +61,13 @@
      * */
     function getElementsByClassName(className, tagName, parentNode) {
         var els = ($(parentNode) || document).getElementsByTagName(tagName || '*'),
-            results = [];
-        for (var i = 0; i < els.length; i++) {
-            if (hasClass(className, els[i])) results.push(els[i]);
+            results = [],
+            i = 0,
+            max = els.length;
+        for (i = 0; i < max; i++) {
+            if (hasClass(className, els[i])) {
+                results.push(els[i]);
+            }
         }
         return results;
     }
@@ -79,12 +83,12 @@
         if (!hasClass(className, el)) {
             el.className = trim(el.className + " " + className);
         }
-    };
+    }
 
     function removeClass(className, el) {
         el = $(el);
         el.className = trim(el.className.replace(XRegExp.cache("(?:^|\\s)" + className + "(?:\\s|$)", "g"), " "));
-    };
+    }
 
     function toggleClass(className, el) {
         if (hasClass(className, el)) {
@@ -92,12 +96,12 @@
         } else {
             addClass(className, el);
         }
-    };
+    }
 
     function swapClass(oldClass, newClass, el) {
         removeClass(oldClass, el);
         addClass(newClass, el);
-    };
+    }
 
     function replaceSelection(textbox, str) {
         if (textbox.setSelectionRange) {
@@ -111,12 +115,12 @@
             range.text = str;
             range.select();
         }
-    };
+    }
 
     function extend(to, from) {
         for (var property in from) to[property] = from[property];
         return to;
-    };
+    }
 
     // purge by Douglas Crockford <http://javascript.crockford.com/memory/leak.html>
     function purge(d) {
@@ -137,7 +141,7 @@
                 purge(d.childNodes[i]);
             }
         }
-    };
+    }
 
     // Sniff
     var isWebKit = navigator.userAgent.indexOf("WebKit") > -1,

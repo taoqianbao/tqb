@@ -1,0 +1,31 @@
+/*
+    属性选择器
+*/
+a[title^='title1']{
+    font-size: 12px;
+}
+
+a[title$='title2']{
+    font-size:15px;
+}
+
+a[title*='title3']{
+    font-size: 20px;
+}
+
+/*
+    连字符
+*/
+div~img{
+    border: 1px solid #ccc;
+}
+
+/*
+    伪类
+*/
+p:not([class*='lead']){
+    color: black;
+}
+
+
+

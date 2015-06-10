@@ -1,0 +1,150 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>实例: CSS3详解：transform -- 大前端</title>
+    <style type="text/css">
+
+        body,h1,h2,h3,h4,p,ul,li,ol,dl,dt,dd,input,textarea,figure,form{margin:0;padding:0}
+        body,input,textarea{font-size:12px;font-family:microsoft yahei}
+        body{text-align:center;color:#33383D;background:#eee}
+        ul,ol{list-style:none}
+        img{border:0}
+        button,input {line-height:normal;*overflow:visible}
+        input,textarea{outline:none}
+        a{color:#61B3E6;text-decoration:none}
+        a:hover{color:#1FAEFF}
+        .demo-header{position:relative;height:32px;background-color:#444;line-height:32px;text-align: left;}
+        .demo-name{background-color: #61B3E6;color: #fff;display: inline-block;padding: 0 20px;}
+        .demo-name:hover{color: #fff;}
+        .demo-title{height:0;overflow:hidden}
+        .demo-container{clear: both;padding:30px 20px;text-align:left;margin:0 auto;line-height: 18px;}
+        .demo h2{font-size: 15px;padding-bottom: 6px;margin-bottom: 20px;border-bottom: solid 1px #ddd;}
+        .ads-example{overflow: hidden;margin: 20px auto 30px;max-width: 780px;}
+
+    </style>
+</head>
+<body>
+<h1 class="demo-title">实例: CSS3详解：transform -- 大前端</h1>
+<div class="demo-header">
+    <a class="demo-name" href="http://www.daqianduan.com/2959.html">&laquo; CSS3详解：transform</a>
+</div>
+<div class="demo-container demo">
+
+    <style type="text/css">
+        .demo{
+            width: 300px;
+        }
+        .transform{margin:30px 0 80px 0;width:200px;height:50px;font-size:18px;font-weight:bold;background:#DEE4EE;color:#305999;text-align:center;line-height:50px}
+        .transform1{-webkit-transform:rotate(10deg);-moz-transform:rotate(10deg); transform:rotate(10deg);}
+        .transform2{-webkit-transform:skew(20deg);-moz-transform:skew(20deg); transform: skew(20deg);}
+        .transform3{
+            -webkit-transform: scale(1.5);
+            -moz-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+            -o-transform: scale(1.5);
+            transform: scale(1.5);
+        }
+        .transform4{
+            -webkit-transform: translate(120px, 0);
+            -moz-transform: translate(120px, 0);
+            -ms-transform: translate(120px, 0);
+            -o-transform: translate(120px, 0);
+            transform: translate(120px, 0);
+        }
+        .transform5{
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
+        .transform5:hover{
+            -webkit-transform: rotate(360deg) skew(-20deg) scale(3.0) translate(-10px,0);
+            -moz-transform: rotate(360deg) skew(-20deg) scale(3.0) translate(-10px,0);
+            -ms-transform: rotate(360deg) skew(-20deg) scale(3.0) translate(-10px,0);
+            -o-transform: rotate(360deg) skew(-20deg) scale(3.0) translate(-10px,0);
+            transform: rotate(360deg) skew(-20deg) scale(3.0) translate(-10px,0);
+        }
+    </style>
+
+    <div class="transform transform1">transform</div>
+    <div class="transform transform2">transform</div>
+    <div class="transform transform3">transform</div>
+    <div class="transform transform4">transform</div>
+    <div class="transform transform5">transform</div></div>
+
+
+<style type="text/css">
+
+    .polling_message {
+        color: white;
+        float: left;
+        margin-right:2%;
+    }
+    .view_port {
+        background-color: black;
+        height: 50px;
+        width: 100%;
+        overflow: hidden;
+    }
+    .cylon_eye {
+        color: white;
+        height: 100%;
+        width: 80%;
+        background-color: red;
+
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 75%);
+
+        -webkit-animation: move_eye 4s linear 0s infinite alternate;
+        -moz-animation: move_eye 4s linear 0s infinite alternate;
+        -o-animation: move_eye 4s linear 0s infinite alternate;
+        animation: move_eye 4s linear 0s infinite alternate;
+    }
+    @-webkit-keyframes move_eye {
+        from {
+            margin-left:-20%;
+        }
+        to {
+            margin-left:100%;
+        }
+    }
+    @-moz-keyframes move_eye {
+        from {
+            margin-left:-20%;
+        }
+        to {
+            margin-left:100%;
+        }
+    }
+    @-o-keyframes move_eye {
+        from {
+            margin-left:-20%;
+        }
+        to {
+            margin-left:100%;
+        }
+    }
+    @keyframes move_eye {
+        from {
+            margin-left:-20%;
+        }
+        to {
+            margin-left:100%;
+        }
+    }
+
+</style>
+
+    <div class="view_port">
+        <div class="polling_message">
+            Listener for dispatches
+        </div>
+        <div class="cylon_eye">
+        </div>
+    </div>
+
+
+</body>
+</html>

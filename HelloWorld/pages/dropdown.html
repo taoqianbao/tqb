@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+
+        #searchForm {
+            width:500px; height: 300px; border: solid 1px #1FAEFF;
+        }
+        #Filter{
+
+        }
+
+        #Filter .Multi, #Filter .Multi2{
+             float:left;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="searchForm">
+
+<div id="Filter">
+    <i id="more">更多</i>
+    <div class="Multi2">
+        <p class="Fl" style="display: none;">售价</p>
+        <dl>
+            <dt>售价</dt>
+            <i class="iconfont"></i>
+        </dl>
+        <ul class="Dn" style="display: none;">
+            <li val="-1" class="cur">不限</li>
+            <li val="1">100万以下</li>
+            <li val="2">100-150万</li>
+            <li val="3">150-200万</li>
+            <li val="4">200-300万</li>
+            <li val="5">300-500万</li>
+            <li val="6">500-700万</li>
+            <li val="7">700-1000万</li>
+            <li val="8">1000万以上</li>
+        </ul>
+        <input type="hidden" name="ip" value="-1">
+    </div>
+    <div class="Multi2">
+        <p class="Fl" style="display: none;">面积</p>
+        <dl>
+            <dt>面积</dt>
+            <i class="iconfont"></i>
+        </dl>
+        <ul class="Dn" style="display: none;">
+            <li val="-1" class="cur">不限</li>
+            <li val="1">50m²以下</li>
+            <li val="2">50-80m²</li>
+            <li val="3">80-110m²</li>
+            <li val="4">110-140m²</li>
+            <li val="5">140-200m²</li>
+            <li val="6">200m²以上</li>
+        </ul>
+        <input type="hidden" name="ia" value="-1">
+    </div>
+    <div class="Multi">
+        <dl>
+            <dt>户型</dt>
+            <i class="iconfont" style="display: block;"></i>
+            <dd style="display: none;"></dd>
+        </dl>
+        <div class="Dn" style="display: none;">
+            <label class="Checkbox"><input type="checkbox" name="rn" value="1">一室</label>
+            <label class="Checkbox"><input type="checkbox" name="rn" value="2">二室</label>
+            <label class="Checkbox"><input type="checkbox" name="rn" value="3">三室</label>
+            <label class="Checkbox"><input type="checkbox" name="rn" value="4">四室以上</label>
+        </div>
+    </div>
+    <div class="Multi">
+        <dl>
+            <dt>特色</dt>
+            <i class="iconfont" style="display: block;"></i>
+            <dd style="display: none;"></dd>
+        </dl>
+        <div class="Dn" style="display: none;">
+            <label class="Checkbox"><input type="checkbox" name="fe" value="1">满二</label>
+            <label class="Checkbox"><input type="checkbox" name="fe" value="2">唯一</label>
+            <label class="Checkbox"><input type="checkbox" name="fe" value="3">学区</label>
+        </div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
