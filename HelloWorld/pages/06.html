@@ -7,23 +7,69 @@
 </head>
 <body>
 
-    <div id="qunit"></div>
+<div id="qunit"></div>
 
-    <script type="application/javascript" src="../js/jquery-1.10.2.js"></script>
-    <script type="application/javascript" src="../js/underscore.js"></script>
+<script type="application/javascript" src="../js/jquery-1.10.2.js"></script>
+<script type="application/javascript" src="../js/underscore.js"></script>
 
-    <script type="application/javascript">
+<script type="application/javascript">
 
-        var jsData = {
-            name: 'data'
-        };
+    var jsData = {
+        name: 'data'
+    };
 
-        var underscoreData = _(jsData);
+    var underscoreData = _(jsData);
 
-        underscoreData.value();
+    underscoreData.value();
+
+    //var _ = "my variable";
+
+    var us = _.noConflict();
+
+    console.log(us);
+
+    var arr = [10, 20, 30];
+    var v1 = us(arr).chain()
+            .map(function (item) {
+                return item++;
+            })
+            .first()
+            .value();
+
+    console.log(v1);
+
+    us.mixin({
+        method1: function (object) {
+            //todo
+        },
+        method2: function (arr) {
+            //todo
+        }
+    });
+
+    var arr1 = us(arr).map(function (item, i) {
+        return item + i;
+    });
+
+    var obj = {
+        first: 1,
+        second: 2
+    }
+
+    us(obj).each(function (value, key) {
+        return obj[key] = value + 1;
+    })
+
+    var myvar = '3.15159',
+            str1 = '' + myvar,
+            int1 = ~~myvar;
 
 
-    </script>
+    var numbers = [6,1,4,29,41,44];
+    numbers.sort(function(a,b){ return b-a; });
+
+
+</script>
 
 </body>
 </html>
