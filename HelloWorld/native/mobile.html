@@ -3,34 +3,145 @@
 <head lang="en">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Pages - jQuery Mobile Demos</title>
+
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/jqm-demos.css">
+    <link rel="stylesheet" href="css/demo.css">
+
     <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/jQ/ui/jquery.easing.1.3.js"></script>
     <script src="../js/underscore.js"></script>
     <script src="../js/backbone.js"></script>
+    <script src="../js/iscroll/iscroll.js"></script>
+    <script src="app/preInit.js"></script>
     <script src="../js/jQ/jquery.mobile-1.4.5.js"></script>
+    <script src="app/appIndex.js"></script>
 </head>
 <body>
+
 <div data-role="page" class="jqm-demos" data-quicklinks="true">
 
     <div data-role="header" class="jqm-header">
         <h2>demo</h2>
         <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
         <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
-    </div><!-- /header -->
+    </div>
+    <!-- /header -->
 
-    <div role="main" class="ui-content jqm-content">
+    <div role="main" class="ui-content jqm-content" style="padding:0;">
 
-        <p>Note that the contents of the first page isn't removed from the DOM, only pages loaded in via Ajax. Pages inside a multi-page template aren't affected by this feature at all - jQuery Mobile only removes pages loaded via Ajax.</p>
+        <h2>Index</h2>
 
-    </div><!-- /content -->
+        <div id="wrapper">
+            <div id="scroller">
+                <ul>
+                <li>Pretty row 1</li>
+                <li>Pretty row 2</li>
+                <li>Pretty row 3</li>
+                <li>Pretty row 4</li>
+                <li>Pretty row 5</li>
+                <li>Pretty row 6</li>
+                <li>Pretty row 7</li>
+                <li>Pretty row 8</li>
+                <li>Pretty row 9</li>
+                <li>Pretty row 10</li>
+                <li>Pretty row 11</li>
+                <li>Pretty row 12</li>
+                <li>Pretty row 13</li>
+                <li>Pretty row 14</li>
+                <li>Pretty row 15</li>
+                <li>Pretty row 16</li>
+                <li>Pretty row 17</li>
+                <li>Pretty row 18</li>
+                <li>Pretty row 19</li>
+                <li>Pretty row 20</li>
+                <li>Pretty row 21</li>
+                <li>Pretty row 22</li>
+                <li>Pretty row 23</li>
+                <li>Pretty row 24</li>
+                <li>Pretty row 25</li>
+                <li>Pretty row 26</li>
+                <li>Pretty row 27</li>
+                <li>Pretty row 28</li>
+                <li>Pretty row 29</li>
+                <li>Pretty row 30</li>
+                <li>Pretty row 31</li>
+                <li>Pretty row 32</li>
+                <li>Pretty row 33</li>
+                <li>Pretty row 34</li>
+                <li>Pretty row 35</li>
+                <li>Pretty row 36</li>
+                <li>Pretty row 37</li>
+                <li>Pretty row 38</li>
+                <li>Pretty row 39</li>
+                <li>Pretty row 40</li>
+                <li>Pretty row 41</li>
+                <li>Pretty row 42</li>
+                <li>Pretty row 43</li>
+                <li>Pretty row 44</li>
+                <li>Pretty row 45</li>
+                <li>Pretty row 46</li>
+                <li>Pretty row 47</li>
+                <li>Pretty row 48</li>
+                <li>Pretty row 49</li>
+                <li>Pretty row 50</li>
+            </ul>
+             </div>
+        </div>
+
+    </div>
+    <!-- /content -->
 
     <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
-        <p>jQuery Mobile Demos version <span class="jqm-version"></span></p>
-        <p>Copyright 2014 The jQuery Foundation</p>
-    </div><!-- /footer -->
+        <div data-role="navbar" class="webkit">
+            <ul>
+                <li><a href="#demo2" data-icon="grid">骑行</a></li>
+                <li><a class="ui-btn-active" href="#" data-icon="star">排行榜</a></li>
+                <li><a href="#" data-icon="gear">车队</a></li>
+                <li><a href="#" data-icon="gear">活动</a></li>
+                <li><a href="#" data-icon="gear">更多</a></li>
+            </ul>
+        </div>
+        <!-- /navbar -->
+    </div>
+    <!-- /footer -->
 
-</div><!-- /page -->
+    <!-- TODO: This should become an external panel so we can add input to markup (unique ID) -->
+    <div data-role="panel" class="jqm-search-panel" data-position="right" data-display="overlay" data-theme="a">
+        <div class="jqm-search">
+            <ul class="jqm-list" data-filter-placeholder="Search Links..." data-filter-reveal="true">
+                <li data-filtertext="demos homepage" data-icon="home"><a href="#">Home</a></li>
+                <li data-filtertext="introduction overview getting started"><a href="#" data-ajax="false">Introduction</a></li>
+                <li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+                        <a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">
+                            3rd party API demos<span class="ui-collapsible-heading-status"> click to expand contents</span>
+                        </a>
+                    </h3>
+                    <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+                        <ul>
+                            <li data-filtertext="backbone requirejs navigation router"><a href="#" data-ajax="false">Backbone RequireJS</a></li>
+                            <li data-filtertext="google maps geolocation demo"><a href="#" data-ajax="false">Google Maps geolocation</a></li>
+                            <li data-filtertext="google maps hybrid"><a href="#" data-ajax="false">Google Maps list toggle</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /panel -->
+
+    <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+        <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+            <li data-filtertext="demos homepage" data-icon="home"><a href="#">Home</a></li>
+            <li data-filtertext="introduction overview getting started"><a href="#" data-ajax="false">Introduction</a></li>
+        </ul>
+    </div>
+
+</div>
+<!-- /page -->
+
 </body>
 </html>
