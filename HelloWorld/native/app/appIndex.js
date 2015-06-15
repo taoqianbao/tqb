@@ -16,8 +16,8 @@
                 shrinkScrollbars: 'scale',
                 fadeScrollbars: true
             });
-            console.log("myScroll");
         }
+
         document.addEventListener('touchmove', function (e) {
             e.preventDefault();
         }, false);
