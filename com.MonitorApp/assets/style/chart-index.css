@@ -1,0 +1,115 @@
+* {
+	font-size: 12px;
+}
+.nopadding{
+	padding: 0;
+}
+
+.mapmodule {
+	background: #a9caf3;
+	padding: 5px;
+}
+.blockone {
+	background: #0270c8;
+	border: solid 1px #fff;
+	display: block;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	padding-top: 20px;
+	font-weight: bold;
+	font-size: 18px;
+}
+.blockone:hover {
+	background: #2b8ddc;
+}
+
+.blockone span{
+	color: #FFF;
+}
+
+a.chartTotle {
+	display: flex;
+	width: 100%; 
+	margin: 0 auto 10px;
+	background: #92d050;
+	clear: both;
+}
+a.chartTotle span {
+	display: block; float: left;
+	min-height: 30px; 
+	color: #fff;
+	text-align: center;
+}
+a.chartTotle .label{	
+	width: 59%;
+	background: #0070c0;
+}
+a.chartTotle .number{
+	width: 40%;	
+}
+
+div.topinfo a.chartTotle{
+	width: 40%; float: left;
+}
+
+
+
+.circle {
+	border-radius: 50%;
+	display: inline-block;
+}
+.outercircle {
+	width: 100px;
+	height: 100px;
+	background: #9dde58;
+	position: relative;
+}
+.outercircle:hover{
+	background: #b5ec7b;
+}
+.innercircle {
+	width: 70px;
+	height: 70px;
+	background: #5e99e3;
+	position: absolute;
+	top: 15%;
+	left: 15%;
+	display: block;
+	right: 0;
+}
+.innercircle span {
+	color: #fff;
+	display: block;
+	line-height: 70px;
+	width:100%;  text-align:center;
+}
+
+table.tableone {
+	border: solid 1px #000000;
+	padding: 5px;
+	margin: 5px;
+	background-color: #0070c0;
+	width: 100%;
+	min-height: 150px; height: 150px;
+}
+table.tableone thead td {
+	background-color: #a9caf3;
+	text-align: center;
+	color: #6d9fca;
+}
+table.tableone td {
+	padding: 5px;
+	margin: 5px;
+	/*border: solid 2px #a9caf3;*/
+}
+table.tableone td.label {
+	color: #fff;
+}
+table.tableone td.desc {
+	background-color: #92d050;
+}
+
+
+
+
