@@ -1,186 +1,579 @@
+<!--
+	作者：taoqianbao@qq.com
+	时间：2015-10-20
+	描述：
+-->
 <!doctype html>
 <html class="no-js">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>监控平台</title>
-    <meta name="description" content="监控平台">
-    <meta name="keywords" content="index">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
-    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
-    <link rel="stylesheet" href="assets/css/admin.css">
-    <link rel="stylesheet" href="assets/style/chart-index.css">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>监控平台</title>
+		<meta name="description" content="监控平台">
+		<meta name="keywords" content="index">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="icon" type="image/png" href="assets/i/favicon.png">
+		<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<link rel="stylesheet" href="assets/css/amazeui.min.css" />
+		<link rel="stylesheet" href="assets/style/chart-index.css">
+	</head>
 
-<body>
-    <!--[if lte IE 9]>
+	<body>
+<!--[if lte IE 9]>
 <p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
   以获得更好的体验！</p>
 <![endif]-->
 
-    <header class="am-topbar admin-header">
-        <div class="am-topbar-brand">
-            <strong>监控平台</strong> <small>报表查看系统</small>
-        </div>
+			<!-- content start -->
+			<div style="padding: 5px;">
 
-        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span>
-        </button>
+					<div class="am-g myapp-am-g">
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+							<div class="mapmodule">
+								
+								<div class="fullscreenClose">
+									<a href="javascript:;" class="am-close am-close-alt map-fs-exit" style="position: absolute; right: 5px; top: 2px;">&times;</a>
+								</div>
+								
+								<div class="am-g myapp-am-g">
+									<div class="am-u-sm-12">
+										<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+										<div id="chartChinaMap" style="height:150px"></div>
+									</div>
+								</div>
+								<div class="am-g myapp-am-g">
+									<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+										<table class="tableone">
+											<thead>
+												<tr>
+													<td colspan="2">
+														各省进线量TOP5及每百万卡回拨量TOP5
+													</td>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="label">
+														省份进线量占比TOP5
+													</td>
+													<td class="desc">
+														广东、福建、湖南、上海、四川
+													</td>
+												</tr>
+												<tr>
+													<td class="label">
+														每百万卡回拨量占比TOP5
+													</td>
+													<td class="desc">
+														广东、福建、湖南、上海、四川
+													</td>
+												</tr>
+											</tbody>
+										</table>
 
-        <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
-
-            <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-                <li class="am-dropdown" data-am-dropdown>
-                    <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-                        <span class="am-icon-users"></span> 我的账户 <span class="am-icon-caret-down"></span>
-                    </a>
-                    <ul class="am-dropdown-content">
-                        <li><a href="#"><span class="am-icon-user"></span> 资料</a>
-                        </li>
-                        <li><a href="#"><span class="am-icon-cog"></span> 设置</a>
-                        </li>
-                        <li><a href="#"><span class="am-icon-power-off"></span> 退出</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a>
-                </li>
-            </ul>
-        </div>
-    </header>
-
-    <div class="am-cf admin-main">
-        <!-- sidebar start -->
-        <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
-            <div class="am-offcanvas-bar admin-offcanvas-bar">
-                <ul class="am-list admin-sidebar-list">
-                    <li><a href="chart-index.html"><span class="am-icon-home"></span> 首页</a>
-                    </li>
-                    <li class="admin-parent">
-                        <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 报表 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
-                        <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
-                            <li><a href="chart-index.html" class="am-cf"><span class="am-icon-check"></span> 图表<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a>
-                            </li>
-                            <li><a href="chart-index.html"><span class="am-icon-puzzle-piece"></span> 图表</a>
-                            </li>
-                            <li><a href="chart-index.html"><span class="am-icon-th"></span> 图表<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a>
-                            </li>
-                            <li><a href="chart-index.html"><span class="am-icon-calendar"></span> 图表</a>
-                            </li>
-                            <li><a href="chart-index.html"><span class="am-icon-bug"></span> 图表</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><span class="am-icon-sign-out"></span> 注销</a>
-                    </li>
-                </ul>
-
-                <div class="am-panel am-panel-default admin-sidebar-panel">
-                    <div class="am-panel-bd">
-                        <p><span class="am-icon-tag"></span> Morniter</p>
-                        <p>Welcome to the Morniter System!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- sidebar end -->
-
-        <!-- content start -->
-        <div class="admin-content">
-
-            <div class="am-cf am-padding">
-                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">首页</strong> / <small>一些常用模块</small>
-                </div>
-            </div>
-
-            <div class="mapmodule">
-
-                <div class="am-g">
-
-                    <div class="am-u-sm-4">
-                        <div class="circle outercircle">
-							<div class="circle innercircle">
-								<span>天津</span>
+									</div>
+									<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+										<table class="tableone">
+											<thead>
+												<tr>
+													<td colspan="6">
+														各省份的进线量与每百万卡回拨量实际数据
+													</td>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="label">
+														地区
+													</td>
+													<td class="label">
+														广东
+													</td>
+													<td class="label">
+														福建
+													</td>
+													<td class="label">
+														湖南
+													</td>
+													<td class="label">
+														上海
+													</td>
+													<td class="label">
+														四川
+													</td>
+												</tr>
+												<tr>
+													<td class="label">
+														进线量占比
+													</td>
+													<td class="label">
+														9.13
+													</td>
+													<td class="label">
+														9.13
+													</td>
+													<td class="label">
+														9.13
+													</td>
+													<td class="label">
+														9.13
+													</td>
+													<td class="label">
+														9.13
+													</td>
+												</tr>
+												<tr>
+													<td class="label">
+														回拨量占比
+													</td>
+													<td class="label">
+														9.13
+													</td>
+													<td class="label">
+														9.13
+													</td>
+													<td class="label">
+														9.13
+													</td>
+													<td class="label">
+														9.13
+													</td>
+													<td class="label">
+														9.13
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
 							</div>
 						</div>
-                    </div>
-                    <div class="am-u-sm-4">
-                        <a href="javascript:;" class="blockone">
-                            <span>接通率</span>
-                            <span>66.20%</span>
-                        </a>
-                    </div>
-                    <div class="am-u-sm-4">
-                        <a href="javascript:;" class="blockone">
-                            <span>服务级别</span>
-                            <span>32.23%</span>
-                        </a>
-                    </div>
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
 
-                </div>
+							<!--
+                            	作者：taoqianbao@qq.com
+                            	时间：2015-10-20
+                            	描述：
+                            -->
 
-                <div class="am-g">
-                    <div class="am-u-sm-4" style="margin-top: 50px; padding: 0;">                    	
-                    	<a class="chartTotle">                    		
-                    		<span class="label">每日累计人工呼入量</span>
-                    		<span class="number">6589987</span>
-                    	</a>
-                    	<a class="chartTotle">
-                    		<span class="label">客服工作人数</span>
-                    		<span class="number">598</span>
-                    	</a>
-                    	<a class="chartTotle">
-                    		<span class="label">当前值班人数</span>
-                    		<span class="number">6589987</span>
-                    	</a>
-                    	<a class="chartTotle">
-                    		<span class="label">队列等待通数</span>
-                    		<span class="number">327</span>
-                    	</a>
-                    	<a class="chartTotle">
-                    		<span class="label">最长等候时间</span>
-                    		<span class="number">187</span>
-                    	</a>                            
-                    </div>
-                    <div class="am-u-sm-8" style="padding: 0;">
+							<div class="mapmodule">
 
-                        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-                        <div id="mainChart" style="height:300px"></div>
+								<div class="fullscreenClose">
+									<a href="javascript:;" class="am-close am-close-alt map-fs-exit" style="position: absolute; right: 5px; top: 2px;">&times;</a>
+								</div>
+								
+								<div class="am-g myapp-am-g">
+									<div class="am-u-sm-12 am-u-md-4 am-u-lg-4">
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- content end -->
+										<a class="chartTotle">
+											<span class="label">每日累计人工呼入量</span>
+											<span class="number">6589987</span>
+										</a>
 
-    </div>
+										<div id="chartGauge1" style="height:130px"></div>
+										<div id="chartGauge2" style="height:130px"></div>
 
-    <a href="#" class="am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
-        <span class="am-icon-btn am-icon-th-list"></span>
-    </a>
+									</div>
+									<div class="am-u-sm-12 am-u-md-8 am-u-lg-8">
 
-    <footer>
-        <hr>
-        <p class="am-padding-left">© 2015 HCTech, Inc. Licensed under MIT license.</p>
-    </footer>
+										<div class="am-g myapp-am-g">
+											<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+												<a class="chartTotle">
+													<span class="label">客服工作人数</span>
+													<span class="number">598</span>
+												</a>
+											</div>
+											<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+												<a class="chartTotle">
+													<span class="label">当前值班人数</span>
+													<span class="number">6589987</span>
+												</a>
+											</div>
+											<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+												<a class="chartTotle">
+													<span class="label">队列等待通数</span>
+													<span class="number">327</span>
+												</a>
+											</div>
+											<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+												<a class="chartTotle">
+													<span class="label">最长等候时间</span>
+													<span class="number">187</span>
+												</a>
+											</div>
+										</div>
 
-    <!--[if lt IE 9]>
+										<div class="topinfo">
+										</div>
+
+										<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+										<div id="chartGauge" style="height:220px"></div>
+
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3 am-u-end">
+
+							<div class="mapmodule chart-summary">
+
+								<div class="am-g myapp-am-g">
+
+									<div class="am-u-sm-4" style="text-align: center;">
+										<div class="circle outercircle">
+											<div class="circle innercircle">
+												<span>高价值</span>
+											</div>
+										</div>
+									</div>
+									<div class="am-u-sm-4">
+										<a href="javascript:;" class="blockone">
+											<span>接通率</span>
+											<span>66.20%</span>
+										</a>
+									</div>
+									<div class="am-u-sm-4">
+										<a href="javascript:;" class="blockone">
+											<span>服务级别</span>
+											<span>32.23%</span>
+										</a>
+									</div>
+								</div>
+								<div class="am-g myapp-am-g">
+
+									<div class="am-u-sm-4" style="text-align: center;">
+										<div class="circle outercircle">
+											<div class="circle innercircle">
+												<span>挂失</span>
+											</div>
+										</div>
+									</div>
+									<div class="am-u-sm-4">
+										<a href="javascript:;" class="blockone">
+											<span>接通率</span>
+											<span>66.20%</span>
+										</a>
+									</div>
+									<div class="am-u-sm-4">
+										<a href="javascript:;" class="blockone">
+											<span>服务级别</span>
+											<span>32.23%</span>
+										</a>
+									</div>
+
+								</div>
+							</div>
+
+							<!--
+                            -->
+
+						</div>
+
+					</div>
+
+					<div class="am-g myapp-am-g">
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+
+							<!--
+                            	作者：taoqianbao@qq.com
+                            	时间：2015-10-20
+                            	描述：
+                            -->
+							<div class="mapmodule">
+								
+								<div class="fullscreenClose">
+									<a href="javascript:;" class="am-close am-close-alt map-fs-exit" style="position: absolute; right: 5px; top: 2px;">&times;</a>
+								</div>
+								
+								<div class="am-g myapp-am-g">
+
+									<div class="am-u-sm-4" style="text-align: center;">
+										<div class="circle outercircle">
+											<div class="circle innercircle">
+												<span>上海</span>
+											</div>
+										</div>
+									</div>
+									<div class="am-u-sm-4">
+										<a href="javascript:;" class="blockone">
+											<span>接通率</span>
+											<span>66.20%</span>
+										</a>
+									</div>
+									<div class="am-u-sm-4">
+										<a href="javascript:;" class="blockone">
+											<span>服务级别</span>
+											<span>32.23%</span>
+										</a>
+									</div>
+
+								</div>
+
+								<div class="am-g myapp-am-g">
+									<div class="am-u-sm-4">
+										<a class="chartTotle">
+											<span class="label">每日累计人工呼入量</span>
+											<span class="number">6589987</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">客服工作人数</span>
+											<span class="number">598</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">当前值班人数</span>
+											<span class="number">6589987</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">队列等待通数</span>
+											<span class="number">327</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">最长等候时间</span>
+											<span class="number">187</span>
+										</a>
+									</div>
+									<div class="am-u-sm-8">
+
+										<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+										<div id="chartAreaSH" style="height:220px"></div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+							<!--
+	作者：taoqianbao@qq.com
+	时间：2015-10-20
+	描述：	
+-->
+
+							<div class="mapmodule">
+								
+								<div class="fullscreenClose">
+									<a href="javascript:;" class="am-close am-close-alt map-fs-exit" style="position: absolute; right: 5px; top: 2px;">&times;</a>
+								</div>
+								
+								<div class="am-g myapp-am-g">
+
+									<div class="am-u-sm-4" style="text-align: center;">
+										<div class="circle outercircle">
+											<div class="circle innercircle">
+												<span>苏州</span>
+											</div>
+										</div>
+									</div>
+									<div class="am-u-sm-4">
+										<a href="javascript:;" class="blockone">
+											<span>接通率</span>
+											<span>66.20%</span>
+										</a>
+									</div>
+									<div class="am-u-sm-4">
+										<a href="javascript:;" class="blockone">
+											<span>服务级别</span>
+											<span>32.23%</span>
+										</a>
+									</div>
+
+								</div>
+
+								<div class="am-g myapp-am-g">
+									<div class="am-u-sm-4">
+										<a class="chartTotle">
+											<span class="label">每日累计人工呼入量</span>
+											<span class="number">6589987</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">客服工作人数</span>
+											<span class="number">598</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">当前值班人数</span>
+											<span class="number">6589987</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">队列等待通数</span>
+											<span class="number">327</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">最长等候时间</span>
+											<span class="number">187</span>
+										</a>
+									</div>
+									<div class="am-u-sm-8">
+
+										<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+										<div id="chartAreaSZ" style="height:220px"></div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+							<!--
+	作者：taoqianbao@qq.com
+	时间：2015-10-20
+	描述：
+-->
+							<div class="mapmodule">
+								
+								<div class="fullscreenClose">
+									<a href="javascript:;" class="am-close am-close-alt map-fs-exit" style="position: absolute; right: 5px; top: 2px;">&times;</a>
+								</div>
+								
+								<div class="am-g myapp-am-g">
+
+									<div class="am-u-sm-4" style="text-align: center;">
+										<div class="circle outercircle">
+											<div class="circle innercircle">
+												<span>南宁</span>
+											</div>
+										</div>
+									</div>
+									<div class="am-u-sm-4">
+										<a href="javascript:;" class="blockone">
+											<span>接通率</span>
+											<span>66.20%</span>
+										</a>
+									</div>
+									<div class="am-u-sm-4">
+										<a href="javascript:;" class="blockone">
+											<span>服务级别</span>
+											<span>32.23%</span>
+										</a>
+									</div>
+
+								</div>
+
+								<div class="am-g myapp-am-g">
+									<div class="am-u-sm-4">
+										<a class="chartTotle">
+											<span class="label">每日累计人工呼入量</span>
+											<span class="number">6589987</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">客服工作人数</span>
+											<span class="number">598</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">当前值班人数</span>
+											<span class="number">6589987</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">队列等待通数</span>
+											<span class="number">327</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">最长等候时间</span>
+											<span class="number">187</span>
+										</a>
+									</div>
+									<div class="am-u-sm-8">
+
+										<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+										<div id="chartAreaNN" style="height:220px"></div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3 am-u-end">
+							<!--
+	作者：taoqianbao@qq.com
+	时间：2015-10-20
+	描述：
+-->
+							<div class="mapmodule">
+								
+								<div class="fullscreenClose">
+									<a href="javascript:;" class="am-close am-close-alt map-fs-exit" style="position: absolute; right: 5px; top: 2px;">&times;</a>
+								</div>
+								
+								<div class="am-g myapp-am-g">
+
+									<div class="am-u-sm-4" style="text-align: center;">
+										<div class="circle outercircle">
+											<div class="circle innercircle">
+												<span>天津</span>
+											</div>
+										</div>
+									</div>
+									<div class="am-u-sm-4">
+										<a href="javascript:;" class="blockone">
+											<span>接通率</span>
+											<span>66.20%</span>
+										</a>
+									</div>
+									<div class="am-u-sm-4">
+										<a href="javascript:;" class="blockone">
+											<span>服务级别</span>
+											<span>32.23%</span>
+										</a>
+									</div>
+
+								</div>
+
+								<div class="am-g myapp-am-g">
+									<div class="am-u-sm-4">
+										<a class="chartTotle">
+											<span class="label">每日累计人工呼入量</span>
+											<span class="number">6589987</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">客服工作人数</span>
+											<span class="number">598</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">当前值班人数</span>
+											<span class="number">6589987</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">队列等待通数</span>
+											<span class="number">327</span>
+										</a>
+										<a class="chartTotle">
+											<span class="label">最长等候时间</span>
+											<span class="number">187</span>
+										</a>
+									</div>
+									<div class="am-u-sm-8">
+
+										<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+										<div id="chartAreaTJ" style="height:220px"></div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+					
+			</div>
+			<!-- content end -->
+
+		<!--[if lt IE 9]>
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
 <script src="assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 
-    <!--[if (gte IE 9)|!(IE)]><!-->
-    <script src="assets/js/jquery.min.js"></script>
-    <!--<![endif]-->
-    <script src="assets/js/amazeui.min.js"></script>
-    <script src="assets/js/echarts.js"></script>
-    <script src="assets/apps/chart.index.js"></script>
-</body>
+		<!--[if (gte IE 9)|!(IE)]><!-->
+		<script src="assets/js/jquery.min.js"></script>
+		<!--<![endif]-->
+		<script src="assets/js/amazeui.min.js"></script>
+		<script src="assets/js/echarts.js"></script>
+		<script src="assets/apps/chart.index.js"></script>
+	</body>
 
 </html>

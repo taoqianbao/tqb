@@ -13,7 +13,6 @@
 			$fullText.text($.AMUI.fullscreen.isFullscreen ? '退出全屏' : '开启全屏');
 		});
 
-
 		// 路径配置
 		require.config({
 			paths: {
