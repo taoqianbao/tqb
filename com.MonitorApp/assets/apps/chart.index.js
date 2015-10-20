@@ -12,7 +12,13 @@
 		}).on(fullscreen.raw.fullscreenchange, function() {
 
 			if (fullscreen.isFullscreen) {
+				
 				$(this).addClass("mapfullscreen");
+				
+				var _height = $(window).height();				
+				$("#chartChinaMap").height(_height-200);
+				chartListInstance["chartChinaMap"].resize();
+				
 			} else {
 				$(this).removeClass("mapfullscreen");
 			}
@@ -424,6 +430,7 @@
 			// 为echarts对象加载数据 
 			myChart.setOption(option, true);
 
+			return myChart;
 		}
 
 		//仪表盘
@@ -494,6 +501,8 @@
 			};
 
 			myChart.setOption(option, true);
+			
+			return myChart;
 
 			//clearInterval(timeTicket);
 			//timeTicket = setInterval(function (){
@@ -505,7 +514,6 @@
 
 		//
 		function renderLineBar(ec, mytheme, chartid) {
-
 
 			// 基于准备好的dom，初始化echarts图表
 			var myChart = ec.init(document.getElementById(chartid), mytheme);
@@ -558,6 +566,8 @@
 
 			// 为echarts对象加载数据 
 			myChart.setOption(option);
+			
+			return myChart;
 		}
 
 	});
