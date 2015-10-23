@@ -3,6 +3,7 @@
 
 	$(function() {
 
+		//fullscreen
 		var fullscreen = $.AMUI.fullscreen;
 
 		$("div.mapmodule").on("click", function() {
@@ -15,12 +16,15 @@
 				
 				$(this).addClass("mapfullscreen");
 				
-				var _height = $(window).height();				
-				$("#chartChinaMap").height(_height-200);
+				//var _height = $(window).height();				
+				//$("#chartChinaMap").height(_height-200);
 				chartListInstance["chartChinaMap"].resize();
 				
 			} else {
 				$(this).removeClass("mapfullscreen");
+				
+				$("#chartChinaMap").height(150);
+				chartListInstance["chartChinaMap"].resize();
 			}
 			
 			console.log(chartListInstance);
@@ -33,6 +37,9 @@
 				fullscreen.exit();
 			}
 		});
+		
+		//global map
+		var chartListInstance = {};
 
 		// 路径配置
 		require.config({
@@ -65,8 +72,6 @@
 			],
 			requireCallback
 		);
-
-		var chartListInstance = {};
 
 		function requireCallback(ec, defaultTheme) {
 

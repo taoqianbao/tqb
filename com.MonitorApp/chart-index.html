@@ -29,25 +29,25 @@
 <![endif]-->
 
 			<!-- content start -->
-			<div style="padding: 5px;">
+			<div style="padding: 2px;" style="height: auto;">
 
-					<div class="am-g myapp-am-g">
-						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-							<div class="mapmodule">
+					<div class="am-g myapp-am-g" style="min-height: 400px; height: 400px;">
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3" style="height: 100%;">
+							<div class="mapmodule chartChinaMap">
 								
 								<div class="fullscreenClose">
 									<a href="javascript:;" class="am-close am-close-alt map-fs-exit" style="position: absolute; right: 5px; top: 2px;">&times;</a>
 								</div>
 								
-								<div class="am-g myapp-am-g">
-									<div class="am-u-sm-12">
+								<div class="am-g myapp-am-g" style="height: 50%;">
+									<div class="am-u-sm-12" style="height: 100%;">
 										<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-										<div id="chartChinaMap" style="height:150px"></div>
+										<div id="chartChinaMap" style="height:100%"></div>
 									</div>
 								</div>
-								<div class="am-g myapp-am-g">
-									<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
-										<table class="tableone">
+								<div class="am-g myapp-am-g" style="height: 50%;">
+									<div class="am-u-sm-12 am-u-md-6 am-u-lg-6" style="height: 100%;">
+										<table class="tableone" style="height: 100%;">
 											<thead>
 												<tr>
 													<td colspan="2">
@@ -76,8 +76,8 @@
 										</table>
 
 									</div>
-									<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
-										<table class="tableone">
+									<div class="am-u-sm-12 am-u-md-6 am-u-lg-6" style="height: 100%;">
+										<table class="tableone" style="height: 100%;">
 											<thead>
 												<tr>
 													<td colspan="6">
@@ -152,7 +152,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-6" style="height: 100%;">
 
 							<!--
                             	作者：taoqianbao@qq.com
@@ -160,27 +160,27 @@
                             	描述：
                             -->
 
-							<div class="mapmodule">
+							<div class="mapmodule chartGauge">
 
 								<div class="fullscreenClose">
 									<a href="javascript:;" class="am-close am-close-alt map-fs-exit" style="position: absolute; right: 5px; top: 2px;">&times;</a>
 								</div>
 								
-								<div class="am-g myapp-am-g">
-									<div class="am-u-sm-12 am-u-md-4 am-u-lg-4">
+								<div class="am-g myapp-am-g" style="height: 100%;">
+									<div class="am-u-sm-12 am-u-md-4 am-u-lg-4" style="height: 100%;">
 
-										<a class="chartTotle">
+										<a class="chartTotle" style="height: 70px;">
 											<span class="label">每日累计人工呼入量</span>
 											<span class="number">6589987</span>
 										</a>
 
-										<div id="chartGauge1" style="height:130px"></div>
-										<div id="chartGauge2" style="height:130px"></div>
+										<div id="chartGauge1" style="height:calc((100% - 70px) / 2);"></div>
+										<div id="chartGauge2" style="height:calc((100% - 70px) / 2);"></div>
 
 									</div>
-									<div class="am-u-sm-12 am-u-md-8 am-u-lg-8">
+									<div class="am-u-sm-12 am-u-md-8 am-u-lg-8" style="height: 100%;">
 
-										<div class="am-g myapp-am-g">
+										<div class="am-g myapp-am-g" style="height: 80px;">
 											<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
 												<a class="chartTotle">
 													<span class="label">客服工作人数</span>
@@ -209,21 +209,22 @@
 
 										<div class="topinfo">
 										</div>
-
-										<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-										<div id="chartGauge" style="height:220px"></div>
-
+										
+										<div style="height: 320px;">
+											<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+											<div id="chartGauge" style="height:100%"></div>	
+										</div>
 									</div>
 								</div>
 
 							</div>
 
 						</div>
-						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3 am-u-end">
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3 am-u-end" style="height: 100%;">
 
-							<div class="mapmodule chart-summary">
+							<div class="mapmodule chart-summary" style="height: 100%;">
 
-								<div class="am-g myapp-am-g">
+								<div class="am-g myapp-am-g" style="height: 50%;">
 
 									<div class="am-u-sm-4" style="text-align: center;">
 										<div class="circle outercircle">
@@ -245,7 +246,7 @@
 										</a>
 									</div>
 								</div>
-								<div class="am-g myapp-am-g">
+								<div class="am-g myapp-am-g" style="height: 50%;">
 
 									<div class="am-u-sm-4" style="text-align: center;">
 										<div class="circle outercircle">
@@ -276,37 +277,39 @@
 						</div>
 
 					</div>
-
-					<div class="am-g myapp-am-g">
-						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+					
+					<div class="am-g myapp-am-g" style="height: 2px; clear: both;"></div>
+					
+					<div class="am-g myapp-am-g" style="height: 400px;">
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3" style="height: 100%;">
 
 							<!--
                             	作者：taoqianbao@qq.com
                             	时间：2015-10-20
                             	描述：
                             -->
-							<div class="mapmodule">
+							<div class="mapmodule chartAreaSH">
 								
 								<div class="fullscreenClose">
 									<a href="javascript:;" class="am-close am-close-alt map-fs-exit" style="position: absolute; right: 5px; top: 2px;">&times;</a>
 								</div>
 								
-								<div class="am-g myapp-am-g">
+								<div class="am-g myapp-am-g" style="height: 110px;">
 
-									<div class="am-u-sm-4" style="text-align: center;">
+									<div class="am-u-sm-4" style="text-align: center; height: 100%;">
 										<div class="circle outercircle">
 											<div class="circle innercircle">
 												<span>上海</span>
 											</div>
 										</div>
 									</div>
-									<div class="am-u-sm-4">
+									<div class="am-u-sm-4" style="height: 100%;">
 										<a href="javascript:;" class="blockone">
 											<span>接通率</span>
 											<span>66.20%</span>
 										</a>
 									</div>
-									<div class="am-u-sm-4">
+									<div class="am-u-sm-4" style="height: 100%;">
 										<a href="javascript:;" class="blockone">
 											<span>服务级别</span>
 											<span>32.23%</span>
@@ -315,8 +318,8 @@
 
 								</div>
 
-								<div class="am-g myapp-am-g">
-									<div class="am-u-sm-4">
+								<div class="am-g myapp-am-g" style="height: calc(100% - (110px) * 1);">
+									<div class="am-u-sm-4" style="height: 100%;">
 										<a class="chartTotle">
 											<span class="label">每日累计人工呼入量</span>
 											<span class="number">6589987</span>
@@ -338,30 +341,30 @@
 											<span class="number">187</span>
 										</a>
 									</div>
-									<div class="am-u-sm-8">
+									<div class="am-u-sm-8" style="height: 100%;">
 
 										<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-										<div id="chartAreaSH" style="height:220px"></div>
+										<div id="chartAreaSH" style="height:100%"></div>
 
 									</div>
 								</div>
 							</div>
 
 						</div>
-						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3" style="height: 100%;">
 							<!--
 	作者：taoqianbao@qq.com
 	时间：2015-10-20
 	描述：	
 -->
 
-							<div class="mapmodule">
+							<div class="mapmodule chartAreaSZ">
 								
 								<div class="fullscreenClose">
 									<a href="javascript:;" class="am-close am-close-alt map-fs-exit" style="position: absolute; right: 5px; top: 2px;">&times;</a>
 								</div>
 								
-								<div class="am-g myapp-am-g">
+								<div class="am-g myapp-am-g" style="height: 110px;">
 
 									<div class="am-u-sm-4" style="text-align: center;">
 										<div class="circle outercircle">
@@ -385,8 +388,8 @@
 
 								</div>
 
-								<div class="am-g myapp-am-g">
-									<div class="am-u-sm-4">
+								<div class="am-g myapp-am-g" style="height: calc(100% - (110px) * 1);">
+									<div class="am-u-sm-4" style="height: 100%;">
 										<a class="chartTotle">
 											<span class="label">每日累计人工呼入量</span>
 											<span class="number">6589987</span>
@@ -408,29 +411,29 @@
 											<span class="number">187</span>
 										</a>
 									</div>
-									<div class="am-u-sm-8">
+									<div class="am-u-sm-8" style="height: 100%;">
 
 										<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-										<div id="chartAreaSZ" style="height:220px"></div>
+										<div id="chartAreaSZ" style="height:100%"></div>
 
 									</div>
 								</div>
 							</div>
 
 						</div>
-						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3" style="height: 100%;">
 							<!--
 	作者：taoqianbao@qq.com
 	时间：2015-10-20
 	描述：
 -->
-							<div class="mapmodule">
+							<div class="mapmodule chartAreaNN">
 								
 								<div class="fullscreenClose">
 									<a href="javascript:;" class="am-close am-close-alt map-fs-exit" style="position: absolute; right: 5px; top: 2px;">&times;</a>
 								</div>
 								
-								<div class="am-g myapp-am-g">
+								<div class="am-g myapp-am-g" style="height: 110px;">
 
 									<div class="am-u-sm-4" style="text-align: center;">
 										<div class="circle outercircle">
@@ -454,7 +457,7 @@
 
 								</div>
 
-								<div class="am-g myapp-am-g">
+								<div class="am-g myapp-am-g" style="height: calc(100% - (110px) * 1);">
 									<div class="am-u-sm-4">
 										<a class="chartTotle">
 											<span class="label">每日累计人工呼入量</span>
@@ -477,29 +480,29 @@
 											<span class="number">187</span>
 										</a>
 									</div>
-									<div class="am-u-sm-8">
+									<div class="am-u-sm-8" style="height: 100%;">
 
 										<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-										<div id="chartAreaNN" style="height:220px"></div>
+										<div id="chartAreaNN" style="height:100%"></div>
 
 									</div>
 								</div>
 							</div>
 
 						</div>
-						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3 am-u-end">
+						<div class="am-u-sm-12 am-u-md-6 am-u-lg-3 am-u-end" style="height: 100%;">
 							<!--
 	作者：taoqianbao@qq.com
 	时间：2015-10-20
 	描述：
 -->
-							<div class="mapmodule">
+							<div class="mapmodule chartAreaTJ">
 								
 								<div class="fullscreenClose">
 									<a href="javascript:;" class="am-close am-close-alt map-fs-exit" style="position: absolute; right: 5px; top: 2px;">&times;</a>
 								</div>
 								
-								<div class="am-g myapp-am-g">
+								<div class="am-g myapp-am-g" style="height: 110px;">
 
 									<div class="am-u-sm-4" style="text-align: center;">
 										<div class="circle outercircle">
@@ -523,7 +526,7 @@
 
 								</div>
 
-								<div class="am-g myapp-am-g">
+								<div class="am-g myapp-am-g" style="height: calc(100% - (110px) * 1);">
 									<div class="am-u-sm-4">
 										<a class="chartTotle">
 											<span class="label">每日累计人工呼入量</span>
@@ -546,10 +549,10 @@
 											<span class="number">187</span>
 										</a>
 									</div>
-									<div class="am-u-sm-8">
+									<div class="am-u-sm-8" style="height: 100%;">
 
 										<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-										<div id="chartAreaTJ" style="height:220px"></div>
+										<div id="chartAreaTJ" style="height:100%"></div>
 
 									</div>
 								</div>
